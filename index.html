@@ -2,67 +2,68 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8" />
-    <title>Вы приглашены | Вадим & Гельназ</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вадим & Гельназ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <style>
+        /* Имитация NEWFONTS */
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap');
+
         body {
             margin: 0;
-            font-family: 'Helvetica Neue', sans-serif;
-            background: #f7f9fa;
+            font-family: 'Playfair Display', serif;
+            background: #f8f9fa;
             color: #333;
-            overflow-x: hidden;
-        }
-
-        header {
-            position: relative;
-            height: 100vh;
-            background: url('img/background.jpg') no-repeat center center/cover;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-        }
-
-            header h1 {
-                font-size: 3em;
-                font-weight: bold;
-                text-shadow: 0 2px 5px rgba(0,0,0,0.6);
-            }
-
-            header p {
-                font-size: 1.3em;
-                margin-top: 10px;
-            }
-
-        section {
-            padding: 60px 20px;
-            max-width: 900px;
-            margin: auto;
             text-align: center;
         }
 
-        .timer {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            font-size: 2em;
-            margin: 40px 0;
+        h1, h2 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
             color: #2a7f6c;
         }
 
-            .timer div {
-                text-align: center;
+        .photos {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            padding: 60px 20px;
+        }
+
+        .photo-card {
+            flex: 1 1 250px;
+            text-align: center;
+            transform: scale(1);
+            transition: transform 0.3s ease;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            background: #fff;
+            padding: 15px;
+        }
+
+            .photo-card:hover {
+                transform: scale(1.05);
+            }
+
+            .photo-card img {
+                width: 100%;
+                border-radius: 10px;
+            }
+
+            .photo-card p {
+                margin-top: 10px;
+                font-weight: bold;
             }
 
         form {
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            text-align: left;
             max-width: 600px;
             margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            text-align: left;
         }
 
             form label {
@@ -71,7 +72,8 @@
                 font-weight: bold;
             }
 
-            form input[type="text"], form select {
+            form input[type="text"],
+            form select {
                 width: 100%;
                 padding: 10px;
                 border: 1px solid #ccc;
@@ -87,28 +89,36 @@
                 border: none;
                 cursor: pointer;
                 font-size: 1em;
-                border-radius: 5px;
+                border-radius: 30px;
             }
 
         footer {
-            text-align: center;
-            padding: 40px 20px;
+            margin-top: 60px;
             font-size: 0.9em;
             color: #777;
         }
 
-        audio {
-            display: none;
+        .timer {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            font-size: 2em;
+            margin: 40px 0;
+            color: #d63384;
         }
+
+            .timer div {
+                text-align: center;
+            }
     </style>
 </head>
 <body>
 
     <!-- Главная секция -->
-    <header>
+    <header style="background: url('img/background.jpg') no-repeat center center/cover; height: 100vh; display: flex; align-items: center; justify-content: center; color: white;">
         <div>
             <h1>Вадим & Гельназ</h1>
-            <p>10 октября 2025</p>
+            <p style="font-size: 1.3em;">10 октября 2025</p>
         </div>
     </header>
 
@@ -123,123 +133,200 @@
         </div>
     </section>
 
+    <!-- Наша история -->
+    <section style="padding: 60px 20px; background-color: #f8f9fa;">
+        <h2 style="font-size: 2.5em; color: #2a7f6c; margin-bottom: 40px;">Наша история любви</h2>
+
+        <!-- Контейнер с фото -->
+        <div style="
+    position: relative;
+    max-width: 900px;
+    margin: auto;
+    padding: 40px 0;
+    min-height: 500px;
+  ">
+
+            <!-- Фото Вадима -->
+            <div style="
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 250px;
+      text-align: center;
+      z-index: 2;
+    ">
+                <div style="
+        border: 5px solid #ffdac1;
+        border-radius: 15px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        background: #fff;
+        padding: 10px;
+        display: inline-block;
+        transform: rotate(-5deg);
+      ">
+                    <img src="img/vadim_child.jpg" alt="Детство Вадима" style="width: 100%; border-radius: 10px;">
+                </div>
+                <p style="margin-top: 10px; font-weight: bold;">Вадим в детстве</p>
+            </div>
+
+            <!-- Знак + или сердце посередине сверху -->
+            <div style="
+      position: absolute;
+      top: 120px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 40px;
+      color: #d63384;
+      z-index: 1;
+    ">❤️</div>
+
+            <!-- Фото Гельназ -->
+            <div style="
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 250px;
+      text-align: center;
+      z-index: 2;
+    ">
+                <div style="
+        border: 5px dashed #ffe0ec;
+        border-radius: 15px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        background: #fff;
+        padding: 10px;
+        display: inline-block;
+        transform: rotate(5deg);
+      ">
+                    <img src="img/ghelnaz_child.jpg" alt="Детство Гельназ" style="width: 100%; border-radius: 10px;">
+                </div>
+                <p style="margin-top: 10px; font-weight: bold;">Гельназ в детстве</p>
+            </div>
+
+            <!-- Текст истории -->
+            <div style="
+      max-width: 500px;
+      margin: auto;
+      margin-top: 100px;
+      margin-bottom: 40px;
+      text-align: center;
+      font-size: 1.1em;
+      color: #555;
+    ">
+                <p>История нашей любви началась задолго до того, как мы встретились... Судьба свела нас вместе, и теперь мы хотим разделить нашу радость с вами.</p>
+            </div>
+
+            <!-- Общее фото уже взрослые -->
+            <div style="
+      text-align: center;
+      margin-top: 40px;
+      z-index: 3;
+    ">
+                <div style="
+        border: 8px double #d63384;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        display: inline-block;
+        background: white;
+        padding: 10px;
+      ">
+                    <img src="img/together_adult.jpg" alt="Мы теперь вместе" style="width: 100%; max-width: 400px; border-radius: 15px;">
+                </div>
+                <p style="margin-top: 15px; font-weight: bold; font-size: 1.1em;">Мы теперь вместе</p>
+            </div>
+
+        </div>
+    </section>
+
     <!-- Описание -->
-    <section>
+    <section style="padding: 40px 20px;">
         <h2>Вы приглашены!</h2>
         <p>Уважаемые гости, мы рады сообщить вам важную дату — наша свадьба состоится 10 октября 2025 года в ресторане RiverHouse, расположенном по адресу: Димитровград, Ульяновская область, СТ Юбилейный, 762.</p>
         <p>Мы хотим разделить этот особенный день с близкими и друзьями. Пожалуйста, заполните форму ниже, чтобы мы могли лучше подготовиться к вашему приезду.</p>
     </section>
-    <!-- Наша история -->
-<section style="padding: 60px 20px; background-color: #f8f9fa;">
-  <h2 style="font-size: 2.5em; color: #2a7f6c; margin-bottom: 20px;">Наша история любви</h2>
-  <p style="font-size: 1.1em; color: #555; max-width: 700px; margin: auto; margin-bottom: 40px;">
-    История нашей любви началась задолго до того, как мы встретились...
-  </p>
 
-  <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 30px;">
-
-    <!-- Фото Вадима -->
-    <div style="
-      flex: 1 1 250px;
-      text-align: center;
-      transform: scale(1);
-      transition: transform 0.3s ease;
-      border-radius: 15px;
-      overflow: hidden;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-      background: #fff;
-      padding: 15px;
-    " onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-      <img src="img/vadim_child.jpg" alt="Детство Вадима" style="width: 100%; border-radius: 10px;">
-      <p style="margin-top: 10px; font-weight: bold;">Вадим в детстве</p>
-    </div>
-
-    <!-- Фото Гельназ -->
-    <div style="
-      flex: 1 1 250px;
-      text-align: center;
-      transform: scale(1);
-      transition: transform 0.3s ease;
-      border-radius: 15px;
-      overflow: hidden;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-      background: #fff;
-      padding: 15px;
-    " onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-      <img src="img/ghelnaz_child.jpg" alt="Детство Гельназ" style="width: 100%; border-radius: 10px;">
-      <p style="margin-top: 10px; font-weight: bold;">Гельназ в детстве</p>
-    </div>
-
-    <!-- Общее фото -->
-    <div style="
-      flex: 1 1 250px;
-      text-align: center;
-      transform: scale(1);
-      transition: transform 0.3s ease;
-      border-radius: 15px;
-      overflow: hidden;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-      background: #fff;
-      padding: 15px;
-    " onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-      <img src="img/together_adult.jpg" alt="Мы теперь вместе" style="width: 100%; border-radius: 10px;">
-      <p style="margin-top: 10px; font-weight: bold;">Мы теперь вместе</p>
-    </div>
-
-  </div>
-</section>
     <!-- Форма RSVP -->
     <section>
-        <form action="https://formspree.io/f/xqabwaoy" method="POST">
-            <label>
-                Ваше имя и фамилия:<br>
-                <input type="text" name="name" required>
+        <h2 style="margin-bottom: 40px;">Подтвердите своё участие</h2>
+
+        <form action="https://formspree.io/f/YOUR_FORM_ID_HERE" method="POST">
+
+            <!-- Имя -->
+            <label style="display: block; text-align: left; margin-bottom: 20px;">
+                <div style="font-weight: bold; margin-bottom: 10px;">Как вас называть?</div>
+                <input type="text" name="name" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px;">
             </label>
 
-            <label>
-                Сможете ли вы присутствовать?<br>
-                <select name="attendance" required>
-                    <option value="">Выберите вариант</option>
-                    <option value="Да">Да</option>
-                    <option value="Возможно да">Возможно да</option>
-                    <option value="Нет">Нет</option>
-                </select>
-            </label>
+            <!-- Участие -->
+            <div style="text-align: left; margin-bottom: 30px;">
+                <div style="font-weight: bold; margin-bottom: 15px;">Будете ли вы с нами в этот день?</div>
+                <label style="display: flex; align-items: center; margin-bottom: 10px; cursor: pointer;">
+                    <input type="radio" name="attendance" value="С радостью буду" required style="margin-right: 10px;">
+                    С радостью буду
+                </label>
+                <label style="display: flex; align-items: center; margin-bottom: 10px; cursor: pointer;">
+                    <input type="radio" name="attendance" value="Ещё не уверен(а)" style="margin-right: 10px;">
+                    Ещё не уверен(а)
+                </label>
+                <label style="display: flex; align-items: center; cursor: pointer;">
+                    <input type="radio" name="attendance" value="К сожалению, не смогу" style="margin-right: 10px;">
+                    К сожалению, не смогу
+                </label>
+            </div>
 
-            <label>
-                Нужен ли вам трансфер?<br>
-                <select name="transfer" required>
-                    <option value="">Выберите вариант</option>
-                    <option value="Да">Да</option>
-                    <option value="Нет">Нет</option>
-                </select>
-            </label>
+            <!-- Трансфер -->
+            <div style="text-align: left; margin-bottom: 30px;">
+                <div style="font-weight: bold; margin-bottom: 15px;">Нужен ли вам трансфер до места банкета?</div>
+                <label style="display: flex; align-items: center; margin-bottom: 10px; cursor: pointer;">
+                    <input type="radio" name="transfer" value="Да, нужен" required style="margin-right: 10px;">
+                    Да, нужен
+                </label>
+                <label style="display: flex; align-items: center; cursor: pointer;">
+                    <input type="radio" name="transfer" value="Нет, доберёмся сами" style="margin-right: 10px;">
+                    Нет, доберёмся сами
+                </label>
+            </div>
 
-            <label>
-                Какой алкоголь предпочитаете?<br>
-                <select name="alcohol" required>
-                    <option value="">Выберите вариант</option>
-                    <option value="Вино">Вино</option>
-                    <option value="Шампанское">Шампанское</option>
-                    <option value="Водка">Водка</option>
-                    <option value="Коньяк">Коньяк</option>
-                    <option value="Виски">Виски</option>
-                </select>
-            </label>
+            <!-- Алкоголь -->
+            <div style="text-align: left; margin-bottom: 30px;">
+                <div style="font-weight: bold; margin-bottom: 15px;">Какой алкоголь предпочитаете?</div>
+                <label style="display: flex; align-items: center; margin-bottom: 10px; cursor: pointer;">
+                    <input type="checkbox" name="alcohol[]" value="Вино">
+                    Вино
+                </label>
+                <label style="display: flex; align-items: center; margin-bottom: 10px; cursor: pointer;">
+                    <input type="checkbox" name="alcohol[]" value="Шампанское">
+                    Шампанское
+                </label>
+                <label style="display: flex; align-items: center; margin-bottom: 10px; cursor: pointer;">
+                    <input type="checkbox" name="alcohol[]" value="Водка">
+                    Водка
+                </label>
+                <label style="display: flex; align-items: center; margin-bottom: 10px; cursor: pointer;">
+                    <input type="checkbox" name="alcohol[]" value="Коньяк">
+                    Коньяк
+                </label>
+                <label style="display: flex; align-items: center; cursor: pointer;">
+                    <input type="checkbox" name="alcohol[]" value="Виски">
+                    Виски
+                </label>
+            </div>
 
-            <button type="submit">Отправить ответ</button>
+            <!-- Кнопка отправки -->
+            <button type="submit" style="background-color: #d63384; color: white; padding: 12px 20px; border: none; cursor: pointer; font-size: 1em; border-radius: 30px;">Отправить ответ</button>
+
         </form>
     </section>
 
     <!-- Контакты -->
-    <section>
+    <section style="padding: 40px 20px;">
         <h2>Контакты</h2>
         <p>Вадим: +7 (987) 637-13-38</p>
         <p>Гельназ: +7 (985) 635-90-23</p>
     </section>
 
     <!-- Адрес -->
-    <section>
+    <section style="padding: 40px 20px;">
         <h2>Банкет состоится</h2>
         <p>
             Ресторан RiverHouse<br>
