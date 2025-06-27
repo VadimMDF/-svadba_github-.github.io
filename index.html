@@ -130,25 +130,64 @@
         <p>Мы хотим разделить этот особенный день с близкими и друзьями. Пожалуйста, заполните форму ниже, чтобы мы могли лучше подготовиться к вашему приезду.</p>
     </section>
     <!-- Наша история -->
-    <section>
-        <h2>Наша история любви</h2>
-        <p>История нашей любви началась задолго до того, как мы встретились...</p>
+<section style="padding: 60px 20px; background-color: #f8f9fa;">
+  <h2 style="font-size: 2.5em; color: #2a7f6c; margin-bottom: 20px;">Наша история любви</h2>
+  <p style="font-size: 1.1em; color: #555; max-width: 700px; margin: auto; margin-bottom: 40px;">
+    История нашей любви началась задолго до того, как мы встретились...
+  </p>
 
-        <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 30px; margin-top: 40px;">
-            <div style="flex: 1 1 250px; text-align: center;">
-                <img src="img/vadim_child.jpg" alt="Детство Вадима" style="width: 100%; border-radius: 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-                <p style="margin-top: 10px;"><strong>Вадим в детстве</strong></p>
-            </div>
-            <div style="flex: 1 1 250px; text-align: center;">
-                <img src="img/ghelnaz_child.jpg" alt="Детство Гельназ" style="width: 100%; border-radius: 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-                <p style="margin-top: 10px;"><strong>Гельназ в детстве</strong></p>
-            </div>
-            <div style="flex: 1 1 250px; text-align: center;">
-                <img src="img/together_adult.jpg" alt="Вместе уже взрослые" style="width: 100%; border-radius: 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-                <p style="margin-top: 10px;"><strong>Мы теперь вместе</strong></p>
-            </div>
-        </div>
-    </section>
+  <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 30px;">
+
+    <!-- Фото Вадима -->
+    <div style="
+      flex: 1 1 250px;
+      text-align: center;
+      transform: scale(1);
+      transition: transform 0.3s ease;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      background: #fff;
+      padding: 15px;
+    " onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+      <img src="img/vadim_child.jpg" alt="Детство Вадима" style="width: 100%; border-radius: 10px;">
+      <p style="margin-top: 10px; font-weight: bold;">Вадим в детстве</p>
+    </div>
+
+    <!-- Фото Гельназ -->
+    <div style="
+      flex: 1 1 250px;
+      text-align: center;
+      transform: scale(1);
+      transition: transform 0.3s ease;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      background: #fff;
+      padding: 15px;
+    " onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+      <img src="img/ghelnaz_child.jpg" alt="Детство Гельназ" style="width: 100%; border-radius: 10px;">
+      <p style="margin-top: 10px; font-weight: bold;">Гельназ в детстве</p>
+    </div>
+
+    <!-- Общее фото -->
+    <div style="
+      flex: 1 1 250px;
+      text-align: center;
+      transform: scale(1);
+      transition: transform 0.3s ease;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      background: #fff;
+      padding: 15px;
+    " onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+      <img src="img/together_adult.jpg" alt="Мы теперь вместе" style="width: 100%; border-radius: 10px;">
+      <p style="margin-top: 10px; font-weight: bold;">Мы теперь вместе</p>
+    </div>
+
+  </div>
+</section>
     <!-- Форма RSVP -->
     <section>
         <form action="https://formspree.io/f/xqabwaoy" method="POST">
